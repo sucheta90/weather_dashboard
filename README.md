@@ -1,3 +1,3 @@
 # weather_dashboard
 
-## https://uigradients.com/#EveningSunshine // liner gradient
+## https://uigradients.com/#EveningSunshine // linear gradient
