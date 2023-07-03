@@ -1,0 +1,63 @@
+.custom-nav {
+  background: #b92b27; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #1565c0,
+    #b92b27
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #1565c0,
+    #b92b27
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+h2 {
+  color: #fff;
+}
+li {
+  list-style: none;
+}
+#message-box {
+  position: fixed;
+  z-index: 10;
+  right: 0;
+}
+
+.options {
+  text-align: right;
+  margin-right: 0;
+  width: fit-content;
+  text-align: right;
+  /* background-color: darkgray; */
+}
+
+.option {
+  background-color: rgb(236, 231, 231);
+  list-style: none;
+  text-align: right;
+  padding: 0.25em 2em;
+  border: 1px dashed rgb(90, 137, 212);
+  cursor: pointer;
+}
+.option:hover {
+  background-color: rgb(28, 16, 131);
+  color: #fff;
+}
+main {
+  padding: 0.5em 1em;
+}
+#current_data {
+  height: 50%;
+  background-color: rgb(65, 65, 98);
+  color: #fff;
+  padding: 1em 0 1em 2em;
+}
+#future_data {
+  height: 50%;
+}
+.card {
+  background-color: #121c79;
+  color: #fff;
+  margin-right: 1em;
+  margin-top: 1em;
+}
