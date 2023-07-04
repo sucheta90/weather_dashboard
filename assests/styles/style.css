@@ -54,9 +54,15 @@ main {
   background-color: rgb(65, 65, 98);
   color: #fff;
   padding: 1em 0 1em 2em;
+  /* border: 1px solid red; */
 }
 #future_data {
+  margin-top: 1em;
   height: 50%;
+}
+#future_data h3 {
+  padding-left: 1em;
+  margin-bottom: 0;
 }
 .card {
   background-color: #130267;
@@ -64,7 +70,17 @@ main {
   margin-right: 1em;
   margin-top: 1em;
 }
+
+#prev-locations {
+  padding-left: 0;
+}
 #prev-locations li {
-  margin: 1em 0;
-  text-align: center;
+  padding-left: 0.5em;
+  font-size: small;
+  margin: 0.25em 0;
+  color: rgb(45, 44, 53);
+  background-color: rgb(189, 179, 192);
+}
+#prev-locations li button {
+  border: 1px solid rgb(45, 44, 53);
 }

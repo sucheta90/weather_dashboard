@@ -5,18 +5,22 @@ let search_form = $("#search_form"); //form to take search input
 
 // function called on submit fetches data to get co-ordinates by direct geo-coding and shows 5 choices that matches the city name. Based on user selection the city name is saved in the local storage for future use.
 search_form.on("submit", function (e) {
+  console.log(`inside submit`);
+  $("#options").css("display", "block");
   let cities = {};
   e.preventDefault();
-  $("#options");
   let cityName = searchInput.val(); //check for numaric inputs
+  console.log(`cittName`, cityName);
   searchInput.val("");
+
   fetch(
-    `http://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=${5}&appid=${key}`
+    `http://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=${10}&appid=${key}`
   )
     .then((data) => {
       return data.json();
     })
     .then((data) => {
+      console.log(`inside fetchcall geo code`, data);
       for (let el of data) {
         cities[`${el.name}_${el.lat}_${el.lon}`] = {
           name: el.name,
@@ -33,8 +37,6 @@ search_form.on("submit", function (e) {
       }
       $(".option").on("click", function (e) {
         let cityName = $(e.target).text();
-        console.log(`clicked on`, e.target);
-        console.log(`value`, $(e.target).val());
         $("#options").css("display", "none");
         let element = $(e.target);
         let elObj = cities[element.attr("id")];
@@ -59,14 +61,18 @@ function renderLocationData() {
     searchLocation = prevData;
   }
   let prevLocations = $("#prev-locations");
-  console.log(`searchLocation`, searchLocation);
 
   for (let key of Object.keys(searchLocation)) {
     let el = searchLocation[key];
-    // console.log(key);
+
     let li = $("<li>");
+    let btn = $("<button>");
+    btn.text("x");
+    btn.attr("class", "btn");
+    li.attr("class", " d-flex align-conetnt-center justify-content-between");
     li.text(`${el.name}, ${el.state}, ${el.country}`);
     li.attr("id", `${el.name}_${el.lat}_${el.lon}`);
+    li.append(btn);
     prevLocations.append(li);
   }
 }
@@ -79,7 +85,6 @@ function getWeatherData(lat, lon, key, cityName) {
   )
     .then((data) => data.json())
     .then((data) => {
-      console.log(data);
       let list = data.list;
       let newData = [];
       for (let i = 0; i <= 40; i += 8) {
@@ -94,7 +99,6 @@ function getWeatherData(lat, lon, key, cityName) {
 }
 
 function renderWeatherData(data, cityName) {
-  console.log(`new data`, data);
   let liElArr = $("#future_data-cards").children();
   // Current location and current weather data
   $("#current_data #main_city-name").text(cityName);
@@ -103,8 +107,8 @@ function renderWeatherData(data, cityName) {
     "src",
     `https://openweathermap.org/img/wn/${data[0].weather[0].icon}@2x.png`
   );
-  $("#main_temp").text(`${data[0].main.temp}`);
-  $("#main_wind").text(`${data[0].wind.speed} MPH`);
+  $("#main_temp").text(`${data[0].main.temp} `);
+  $("#main_wind").text(`${data[0].wind.speed}  MPH`);
   $("#main_humidity").text(`${data[0].main.humidity} %`);
 
   for (let i = 0; i < liElArr.length; i++) {
