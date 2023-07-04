@@ -15,12 +15,12 @@
     />
     <link rel="stylesheet" href="./assests/styles/style.css" />
     <!-- <link rel="icon" href="./assests/images/sunEmoji.png" /> -->
-    <title>Weather Dashboard</title>
+    <title class="align-center">Weather Dashboard</title>
   </head>
   <body>
     <header>
       <nav class="navbar navbar-expand-lg navbar-light bg-light custom-nav">
-        <div class="container-fluid">
+        <div class="container d-flex justify-content-between">
           <a class="navbar-brand" href="/"
             ><h2 class="align-center">Weather Dashboard</h2></a
           >
@@ -35,30 +35,9 @@
           >
             <span class="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <!-- <li class="nav-item dropdown">
-                <a
-                  class="nav-link dropdown-toggle"
-                  href="#"
-                  id="navbarDropdown"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  Dropdown
-                </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                  <li><hr class="dropdown-divider" /></li>
-                  <li>
-                    <a class="dropdown-item" href="#">Something else here</a>
-                  </li>
-                </ul>
-              </li> -->
-            </ul>
+          <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
             <form class="d-flex" id="search_form">
+              <label for="search_input" class="text-light">Search by City: </label>
               <input
                 class="form-control me-2"
                 type="search"
@@ -79,12 +58,23 @@
       </div>
     </header>
     <main class="row">
-      <aside class="col-12 col-lg-3 scroll h-auto">
+      <aside class="col-12 col-md-4 col-lg-3 scroll h-auto mt-2">
+        <div>
         <h5 class="bg-warning text-center text-dark p-2">Searched Locations</h5>
-        <ul id="prev-locations" class=" d-flex flex-column-reverse justify-content-center"></ul>
+       <ul  class=" d-flex flex-column-reverse justify-content-center aside" id="prev-locations" ></ul>
+       <button class="btn btn-primary btn-large w-100 p-2" id="clear-data"> Clear All</button>
+      </div>
+        <!-- <div class="dropdown w-100">
+          <button class="btn btn-warning dropdown-toggle w-100" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+            Searched Locations
+          </button>
+          <ul id="prev-locations" class="dropdown-menu w-100" aria-labelledby="dropdownMenuButton1">
+           
+          </ul>
+        </div> -->
       </aside>
-      <div class="col-12 col-lg-9 h-100">
-        <section id="current_data">
+      <div class="col-12 col-md-8 col-lg-9 h-100 mt-2">
+        <section id="current_data" class="rounded">
           <p>
             <h3 id="main_city-name"></h3> <span id="present_date"></span>
           </p>
@@ -96,35 +86,35 @@
         <section id="future_data">
           <h3>5-day Forecast</h3>
           <ul class="row d-flex justify-content-evenly" id="future_data-cards">
-            <li class="col-12 col-md-6 col-lg-3 card">
+            <li class="col-12 col-md-4 col-lg-3 card">
               <h5><span class="date"></span></h5>
               <p><img class="icon"/></p>
               <p>Temperature: <span class="temp"></span><sup>o</sup>F</p>
               <p>Wind: <span class="wind"></span>MPH</p>
               <p>Humidity: <span class="humidity"></span>%</p>
             </li>
-            <li class="col-12 col-md-6 col-lg-3 card">
+            <li class="col-12 col-md-4 col-lg-3 card">
               <h5><span class="date"></span></h5>
               <p><img class="icon"/></p>
               <p>Temperature: <span class="temp"></span><sup>o</sup>F</p>
               <p>Wind: <span class="wind"></span>MPH</p>
               <p>Humidity: <span class="humidity"></span>%</p>
             </li>
-            <li class="col-12 col-md-6 col-lg-3 card">
+            <li class="col-12 col-md-4 col-lg-3 card">
               <h5><span class="date"></span></h5>
               <p><img class="icon"/></p>
               <p>Temperature: <span class="temp"></span><sup>o</sup>F</p>
               <p>Wind: <span class="wind"></span>MPH</p>
               <p>Humidity: <span class="humidity"></span>%</p>
             </li>
-            <li class="col-12 col-md-6 col-lg-3 card">
+            <li class="col-12 col-md-4 col-lg-3 card">
               <h5><span class="date"></span></h5>
               <p><img class="icon"/></p>
               <p>Temperature: <span class="temp"></span><sup>o</sup>F</p>
               <p>Wind: <span class="wind"></span>MPH</p>
               <p>Humidity: <span class="humidity"></span>%</p>
             </li>
-            <li class="col-12 col-md-6 col-lg-3 card">
+            <li class="col-12 col-md-4 col-lg-3 card">
               <h5><span class="date"></span></h5>
               <p><img class="icon"/></p>
               <p>Temperature: <span class="temp"></span><sup>o</sup>F</p>

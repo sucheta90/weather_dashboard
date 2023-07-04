@@ -48,13 +48,14 @@ img {
 }
 main {
   padding: 0.5em 1em;
+  margin: 0;
 }
 #current_data {
   height: 50%;
   background-color: rgb(65, 65, 98);
   color: #fff;
   padding: 1em 0 1em 2em;
-  /* border: 1px solid red; */
+  box-shadow: 7px 8px 9px gray;
 }
 #future_data {
   margin-top: 1em;
@@ -69,6 +70,7 @@ main {
   color: #fff;
   margin-right: 1em;
   margin-top: 1em;
+  box-shadow: 7px 8px 9px gray;
 }
 
 #prev-locations {

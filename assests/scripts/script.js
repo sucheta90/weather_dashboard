@@ -2,6 +2,12 @@ const key = "22550d17b8218021ec4876ec01ea0dfe"; // api key
 let searchLocation = {}; //
 let searchInput = $("#search_input");
 let search_form = $("#search_form"); //form to take search input
+let clearBtn = $("#clear-data");
+
+clearBtn.on("click", function (e) {
+  localStorage.clear();
+  location.reload("/");
+});
 
 // function called on submit fetches data to get co-ordinates by direct geo-coding and shows 5 choices that matches the city name. Based on user selection the city name is saved in the local storage for future use.
 search_form.on("submit", function (e) {
