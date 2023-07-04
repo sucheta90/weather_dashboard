@@ -17,6 +17,9 @@ h2 {
 li {
   list-style: none;
 }
+img {
+  background-color: #feb908e6;
+}
 #message-box {
   position: fixed;
   z-index: 10;
@@ -56,8 +59,12 @@ main {
   height: 50%;
 }
 .card {
-  background-color: #121c79;
+  background-color: #130267;
   color: #fff;
   margin-right: 1em;
   margin-top: 1em;
+}
+#prev-locations li {
+  margin: 1em 0;
+  text-align: center;
 }

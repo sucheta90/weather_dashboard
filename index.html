@@ -80,15 +80,17 @@
     </header>
     <main class="row">
       <aside class="col-12 col-lg-3 h-100">
-        <h5 class="bg-warning text-center text-dark p-2">Previous Locations</h5>
-        <ul id="prev-locations" class="h-100 bg-warning"></ul>
+        <h5 class="bg-warning text-center text-dark p-2">Searched Locations</h5>
+        <ul id="prev-locations" class="h-100 d-flex flex-column justify-content-center"></ul>
       </aside>
       <div class="col-12 col-lg-9 h-100">
         <section id="current_data">
-          <h3 id="main_city-name">
-            City<span id="present_date"></span><span id="weather_icon"></span>
-          </h3>
-          <p>Temperature: <span id="main_temp"></span></p>
+          <div>
+            <h3 id="main_city-name"></h3>
+            <span id="present_date"></span>
+            <img id="weather_icon"></img>
+          </div>
+          <p>Temperature: <span id="main_temp"></span><sup>o</sup>F</p>
           <p>Wind: <span id="main_wind"></span></p>
           <p>Humidity: <span id="main_humidity"></span></p>
         </section>
@@ -97,38 +99,38 @@
           <ul class="row d-flex justify-content-evenly" id="future_data-cards">
             <li class="col-12 col-md-6 col-lg-3 card">
               <h4><span class="date"></span></h4>
-              <p><span class="icon"></span></p>
-              <p>Temperature: <span class="temp"></span></p>
-              <p>Wind: <span class="wind"></span></p>
-              <p>Humidity: <span class="humidity"></span></p>
+              <p><img class="icon"/></p>
+              <p>Temperature: <span class="temp"></span><sup>o</sup>F</p>
+              <p>Wind: <span class="wind"></span>MPH</p>
+              <p>Humidity: <span class="humidity"></span>%</p>
             </li>
             <li class="col-12 col-md-6 col-lg-3 card">
               <h4><span class="date"></span></h4>
-              <p><span class="icon"></span></p>
-              <p>Temperature: <span class="temp"></span></p>
-              <p>Wind: <span class="wind"></span></p>
-              <p>Humidity: <span class="humidity"></span></p>
+              <p><img class="icon"/></p>
+              <p>Temperature: <span class="temp"></span><sup>o</sup>F</p>
+              <p>Wind: <span class="wind"></span>MPH</p>
+              <p>Humidity: <span class="humidity"></span>%</p>
             </li>
             <li class="col-12 col-md-6 col-lg-3 card">
               <h4><span class="date"></span></h4>
-              <p><span class="icon"></span></p>
-              <p>Temperature: <span class="temp"></span></p>
-              <p>Wind: <span class="wind"></span></p>
-              <p>Humidity: <span class="humidity"></span></p>
+              <p><img class="icon"/></p>
+              <p>Temperature: <span class="temp"></span><sup>o</sup>F</p>
+              <p>Wind: <span class="wind"></span>MPH</p>
+              <p>Humidity: <span class="humidity"></span>%</p>
             </li>
             <li class="col-12 col-md-6 col-lg-3 card">
               <h4><span class="date"></span></h4>
-              <p><span class="icon"></span></p>
-              <p>Temperature: <span class="temp"></span></p>
-              <p>Wind: <span class="wind"></span></p>
-              <p>Humidity: <span class="humidity"></span></p>
+              <p><img class="icon"/></p>
+              <p>Temperature: <span class="temp"></span><sup>o</sup>F</p>
+              <p>Wind: <span class="wind"></span>MPH</p>
+              <p>Humidity: <span class="humidity"></span>%</p>
             </li>
             <li class="col-12 col-md-6 col-lg-3 card">
               <h4><span class="date"></span></h4>
-              <p><span class="icon"></span></p>
-              <p>Temperature: <span class="temp"></span></p>
-              <p>Wind: <span class="wind"></span></p>
-              <p>Humidity: <span class="humidity"></span></p>
+              <p><img class="icon"/></p>
+              <p>Temperature: <span class="temp"></span><sup>o</sup>F</p>
+              <p>Wind: <span class="wind"></span>MPH</p>
+              <p>Humidity: <span class="humidity"></span> %</p>
             </li>
           </ul>
         </section>
