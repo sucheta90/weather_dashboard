@@ -42,6 +42,7 @@ search_form.on("submit", function (e) {
       $(".option").on("click", function (e) {
         let cityName = $(e.target).text();
         $("#options").css("display", "none");
+        $("#options").empty();
         let element = $(e.target);
         let elObj = cities[element.attr("id")];
         searchLocation[`${elObj.name}_${elObj.state}_${elObj.country}`] = elObj;
