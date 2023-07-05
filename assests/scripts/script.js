@@ -19,7 +19,7 @@ search_form.on("submit", function (e) {
   searchInput.val("");
 
   fetch(
-    `http://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=${10}&appid=${key}`
+    `https://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=${10}&appid=${key}`
   )
     .then((data) => {
       return data.json();
