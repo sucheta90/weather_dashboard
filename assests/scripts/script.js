@@ -4,6 +4,7 @@ let searchInput = $("#search_input");
 let search_form = $("#search_form"); //form to take search input
 let clearBtn = $("#clear-data");
 
+// Clears search history
 clearBtn.on("click", function (e) {
   localStorage.clear();
   location.reload("/");
@@ -11,12 +12,10 @@ clearBtn.on("click", function (e) {
 
 // function called on submit fetches data to get co-ordinates by direct geo-coding and shows 5 choices that matches the city name. Based on user selection the city name is saved in the local storage for future use.
 search_form.on("submit", function (e) {
-  console.log(`inside submit`);
   $("#options").css("display", "block");
-  let cities = {};
+  let cities = {}; // temp object
   e.preventDefault();
   let cityName = searchInput.val(); //check for numaric inputs
-  console.log(`cittName`, cityName);
   searchInput.val("");
 
   fetch(
@@ -26,7 +25,6 @@ search_form.on("submit", function (e) {
       return data.json();
     })
     .then((data) => {
-      console.log(`inside fetchcall geo code`, data);
       for (let el of data) {
         cities[`${el.name}_${el.lat}_${el.lon}`] = {
           name: el.name,
@@ -72,19 +70,47 @@ function renderLocationData() {
     let el = searchLocation[key];
 
     let li = $("<li>");
-    let btn = $("<button>");
-    btn.text("x");
-    btn.attr("class", "btn");
-    li.attr("class", " d-flex align-conetnt-center justify-content-between");
+    li.attr(
+      "class",
+      " d-flex align-conetnt-center justify-content-between searched"
+    );
     li.text(`${el.name}, ${el.state}, ${el.country}`);
     li.attr("id", `${el.name}_${el.lat}_${el.lon}`);
-    li.append(btn);
     prevLocations.append(li);
   }
 }
 
-renderLocationData();
+// $("aside").on("click", ".delete", function (e) {
+//   let el = e.target;
+//   let parentId = $(el).parent().attr("id");
+//   let newstr = parentId.split("_");
+//   let cityName = newstr[0];
+//   let lat = parseFloat(newstr[1]);
+//   let lon = parseFloat(newstr[2]);
+//   let prevData = JSON.parse(localStorage.getItem("locationData"));
+//   for (let key of Object.keys(prevData)) {
+//     let obj = prevData[key];
+//     if (obj.name === cityName && obj.lat === lat && obj.lon === lon) {
+//       delete prevData.obj;
+//       searchLocation = { ...prevData };
+//       localStorage.setItem("locationData", JSON.stringify(searchLocation));
+//       renderLocationData();
+//     }
+//   }
+// });
 
+// On click function to call weather api from searched location
+$("aside").on("click", ".searched", function (e) {
+  $("aside").find(".delete").css("pointer-event", "none");
+  let el = e.target;
+  let newstr = $(el).attr("id").split("_");
+  let cityName = newstr[0];
+  let lat = parseFloat(newstr[1]);
+  let lon = parseFloat(newstr[2]);
+  getWeatherData(lat, lon, key, cityName);
+});
+
+//Api call for weather info
 function getWeatherData(lat, lon, key, cityName) {
   fetch(
     `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${key}&units=imperial`
@@ -104,6 +130,7 @@ function getWeatherData(lat, lon, key, cityName) {
     });
 }
 
+// Function renders weather data
 function renderWeatherData(data, cityName) {
   let liElArr = $("#future_data-cards").children();
   // Current location and current weather data
@@ -127,8 +154,10 @@ function renderWeatherData(data, cityName) {
         "src",
         `https://openweathermap.org/img/wn/${info.weather[0].icon}@2x.png`
       );
-    $(li).find(".temp").text(info.main.temp);
-    $(li).find(".wind").text(info.wind.speed);
-    $(li).find(".humidity").text(info.main.humidity);
+    $(li).find(".temp").text(`${info.main.temp} `);
+    $(li).find(".wind").text(`${info.wind.speed} `);
+    $(li).find(".humidity").text(`${info.main.humidity} `);
   }
 }
+
+renderLocationData(); // this function runs on page load

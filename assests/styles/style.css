@@ -66,6 +66,7 @@ main {
   margin-bottom: 0;
 }
 .card {
+  padding: 1em;
   background-color: #130267;
   color: #fff;
   margin-right: 1em;
@@ -77,12 +78,13 @@ main {
   padding-left: 0;
 }
 #prev-locations li {
-  padding-left: 0.5em;
+  padding: 0.5em;
   font-size: small;
   margin: 0.25em 0;
   color: rgb(45, 44, 53);
   background-color: rgb(189, 179, 192);
 }
-#prev-locations li button {
-  border: 1px solid rgb(45, 44, 53);
+#prev-locations li:active {
+  background-color: #130267;
+  color: #fff;
 }
