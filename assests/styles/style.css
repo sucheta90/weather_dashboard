@@ -11,6 +11,13 @@
     #b92b27
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
+body {
+  background-image: url(/assests/images/IMG_1977.png);
+  background-size: cover;
+}
+header {
+  position: relative;
+}
 h2 {
   color: #fff;
 }
@@ -24,6 +31,7 @@ img {
   position: fixed;
   z-index: 10;
   right: 0;
+  width: 40%;
 }
 
 .options {
@@ -47,15 +55,18 @@ img {
   color: #fff;
 }
 main {
-  padding: 0.5em 1em;
-  margin: 0;
+  margin: 0 auto !important;
+}
+.aside-header {
+  margin-top: 0;
+  margin-top: 1em;
 }
 #current_data {
-  height: 50%;
+  margin-top: 1em;
   background-color: rgb(65, 65, 98);
   color: #fff;
   padding: 1em 0 1em 2em;
-  box-shadow: 7px 8px 9px gray;
+  box-shadow: 7px 8px 9px #ddd8d8;
 }
 #future_data {
   margin-top: 1em;
@@ -71,7 +82,7 @@ main {
   color: #fff;
   margin-right: 1em;
   margin-top: 1em;
-  box-shadow: 7px 8px 9px gray;
+  box-shadow: 5px 8px 9px #fffefe;
 }
 
 #prev-locations {
@@ -82,7 +93,7 @@ main {
   font-size: small;
   margin: 0.25em 0;
   color: rgb(45, 44, 53);
-  background-color: rgb(189, 179, 192);
+  background-color: rgb(255, 255, 255);
 }
 #prev-locations li:active {
   background-color: #130267;
