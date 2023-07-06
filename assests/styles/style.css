@@ -11,10 +11,10 @@
     #b92b27
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
-body {
+/* body {
   background-image: url(/assests/images/IMG_1977.png);
   background-size: cover;
-}
+} */
 header {
   position: relative;
 }
@@ -65,7 +65,7 @@ main {
   background-color: rgb(65, 65, 98);
   color: #fff;
   padding: 1em 0 1em 2em;
-  box-shadow: 7px 8px 9px #ddd8d8;
+  box-shadow: 7px 8px 9px #797777;
 }
 #future_data {
   margin-top: 1em;
@@ -81,7 +81,7 @@ main {
   color: #fff;
   margin-right: 1em;
   margin-top: 1em;
-  box-shadow: 5px 8px 9px #fffefe;
+  box-shadow: 7px 8px 9px #797777;
 }
 
 #prev-locations {
