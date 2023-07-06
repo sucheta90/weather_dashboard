@@ -91,8 +91,8 @@ main {
   padding: 0.5em;
   font-size: small;
   margin: 0.25em 0;
-  color: rgb(45, 44, 53);
-  background-color: rgb(255, 255, 255);
+  color: rgb(9, 9, 9);
+  background-color: rgb(171, 167, 167);
 }
 #prev-locations li:active {
   background-color: #130267;
