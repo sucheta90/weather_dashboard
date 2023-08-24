@@ -12,14 +12,7 @@ The navigation menu features a search bar that allows users to enter a city name
 
 - [Header Linear Gradient](https://uigradients.com/#EveningSunshine)
 - [Weather Icons](https://openweathermap.org/weather-conditions)
-<p align='center'>
-<img src='./assests/images/IMG_1977.png' width='50%'/>
-</p>
-<p>
-Photo Credit: Self</p>
-<p>
-Location: Grand Teton National Park
-</p>
+
 
 ## ScreenShots
 
